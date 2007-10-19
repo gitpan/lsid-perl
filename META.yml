@@ -1,8 +1,8 @@
 # http://module-build.sourceforge.net/META-spec.html
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         lsid-perl
-version:      1.1.4
-version_from: LS.pm
+version:      1.1.5
+version_from: lib/LS.pm
 installdirs:  site
 requires:
     Compress::Zlib:                1.22

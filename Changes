@@ -1,5 +1,9 @@
 Revision history for Perl extension lsid-perl.
 
+1.1.5
+	- Error occured while uploading cpan module ... Have to up the version number although nothing new has been added. Sorry.
+
+
 1.1.4
 	- Fixed bug in Perl use statements
 	- Minor code style cleanups

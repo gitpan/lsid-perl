@@ -4,8 +4,8 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
     'NAME'		=> 'lsid-perl',
-    'VERSION_FROM'	=> 'LS.pm', # finds $VERSION
-    'PMLIBDIRS' 	=> ['LS'],
+    'VERSION_FROM'	=> 'lib/LS.pm', # finds $VERSION
+    'PMLIBDIRS' 	=> ['lib/LS'],
     'PREREQ_PM'		=> {
 	SOAP::Lite => '0.60',
 	Compress::Zlib => '1.22',
