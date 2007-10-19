@@ -1,0 +1,24 @@
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         lsid-perl
+version:      1.1.4
+version_from: LS.pm
+installdirs:  site
+requires:
+    Compress::Zlib:                1.22
+    Error:                         >=0.15
+    File::Copy:                    >2.00
+    File::Temp:                    0.12
+    LWP:                           5.53
+    MIME::Base64:                  2.12
+    MIME::Tools:                   >=6.106
+    Net::DNS:                      0.28
+    Net::FTP:                      2.65
+    RDF::Core:                     0.30
+    SOAP::Lite:                    0.60
+    Time::HiRes:                   1.20
+    URI:                           1.21
+    XML::XPath:                    1.12
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.30
