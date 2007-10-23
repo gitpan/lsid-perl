@@ -1,28 +1,32 @@
-use 5.006;
-use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
-WriteMakefile(
-    'NAME'		=> 'lsid-perl',
-    'VERSION_FROM'	=> 'lib/LS.pm', # finds $VERSION
-    'PMLIBDIRS' 	=> ['lib/LS'],
-    'PREREQ_PM'		=> {
-	SOAP::Lite => '0.60',
-	Compress::Zlib => '1.22',
-	URI => '1.21',
-	LWP => '5.53',
-	Net::FTP => '2.65',
-	Net::DNS => '0.28',
-	XML::XPath => '1.12',
-	MIME::Base64 => '2.12',
-	File::Temp => '0.12',
-	File::Copy => '>2.00',
-	RDF::Core => '0.30',
-	Time::HiRes => '1.20',
-	MIME::Tools => '>=6.106',
-	Error=> '>=0.15',
-    }, # e.g., Module::Name => 1.1
-    ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
-      (
-       AUTHOR     => 'IBM (http://lsid.sourceforge.net/)') : ()),
-);
+# Load the Module::Install bundled in ./inc/
+    use inc::Module::Install;
+    
+    # Define metadata
+    name            'lsid-perl';
+	version 		'0.1.1.6';
+	license 		'cpl';
+  	abstract 		'Perl module for building clients and servers which resolve and perform metadata queries on LSIDs.';
+    all_from        'lib/LS.pm';
+    author 			'IBM <http://lsid.sourceforge.net/>';
+	
+    # Specific dependencies
+    requires        'Carp'              => '0';
+    requires        'SOAP::Lite'    	=> '0.69';
+	requires        'Compress::Zlib'    => '1.22';
+	requires        'URI'    	 		=> '1.21';
+	requires        'LWP'    	 		=> '5.53';
+	requires        'Net::FTP'    	 	=> '2.65';
+	requires        'Net::DNS'    	 	=> '0.28';
+	requires        'XML::XPath'    	=> '1.12';
+	requires        'MIME::Base64'    	=> '2.12';
+	requires        'File::Temp'    	=> '0.12';
+	requires        'File::Copy'    	=> '2.01';
+	requires        'RDF::Core'    	 	=> '0.30';
+	requires        'Time::HiRes'    	=> '1.20';
+	requires        'MIME::Tools'    	=> '6.106';
+	requires        'Error'    			=> '0.15';
+	
+	no_index directory => 'examples';
+    	
+	auto_install;
+    WriteAll;

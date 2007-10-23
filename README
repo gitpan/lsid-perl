@@ -23,7 +23,7 @@ types and the addition of a Services WSDL document that describes how to
 invoke the authority. Please see the examples/ for more information.
 
 
-* IMPORTANT: You need SOAP::Lite 0.60a installed for this release. You should 
+* IMPORTANT: You need SOAP::Lite 0.69 installed for this release. You should 
 			 also install File::Temp from CPAN as the File::Temp included
 			 with Perl is not sufficient for this module.
 
@@ -99,7 +99,7 @@ DEPENDENCIES
 
 lsid-perl requires these other modules and libraries:
 
-SOAP-Lite-0.60a
+SOAP-Lite-0.69
 URI-1.21
 libwww-perl-5.53
 Net::FTP 2.65
