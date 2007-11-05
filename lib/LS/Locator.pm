@@ -221,21 +221,31 @@ sub resolveAuthority {
 	}
 
 	# Do the DNS lookup
-	my $query = $resolver->search('_lsid._tcp.' . $authority_id, 'SRV');
-	unless ($query) {
+	my $query = $resolver->search('_lsid._tcp.' . $authority_id, 'SRV');  # $query is a Net::DNS::Packet object
+	my $authority;
+	if ($query) {
 
 		$self->recordError( 'Unable to resolve authority to SRV record: ' .
 				    ($resolver->errorstring() || 'No details available from $resolver') );
 
 		$self->addStackTrace();
+		my $rr = ($query->answer())[0];  # rr is a Net::DNS::RR::SRV object
 
-		return undef;
+		# Create an authority interface from the answer
+		$authority = LS::Authority->new_by_hostname($rr->target(), $rr->port());
+
+#		return undef;    # I want to temporarily over-ride this and allow http://domain/authority to be allowed!
+	} else {  # okay, if all else fails, is there a presumptive authority at http://example.org:80/authority ?
+		$query = $resolver->search($authority_id);  # $query is a Net::DNS::Packet object
+		if ($query){
+			use LWP::Simple;
+			my ($content_type, $document_length, $modified_time, $expires, $server) = head("http://$authority_id/authority");
+			return undef unless $document_length;  # if nothing responds then finally give up and return undef
+		}
+		# if we are here, then something must have responded at http://$authority_id:80/authority
+		# so lets hope that its an LSID resolver!
+		$authority = LS::Authority->new_by_hostname($authority_id, '80');
 	}
-
-	my $rr = ($query->answer())[0];
-
-	# Create an authority interface from the answer
-	my $authority = LS::Authority->new_by_hostname($rr->target(), $rr->port());
 	unless(UNIVERSAL::isa($authority, 'LS::Authority')) {
 	
 		$self->recordError('Unable to create new authority from host information');

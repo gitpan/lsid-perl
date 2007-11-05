@@ -3,7 +3,7 @@
     
     # Define metadata
     name            'lsid-perl';
-	version 		'1.1.6';
+	version 		'1.1.7';
 	license 		'cpl';
   	abstract 		'Perl module for building clients and servers which resolve and perform metadata queries on LSIDs.';
     all_from        'lib/LS.pm';

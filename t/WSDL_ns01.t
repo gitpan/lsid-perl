@@ -1,4 +1,4 @@
-# $Id: WSDL_ns01.t,v 1.1 2005/11/10 15:30:48 evanchsa-oss Exp $
+# $Id: WSDL_ns01.t 1506 2005-11-10 15:30:48Z evanchsa-oss $
 # =====================================================================
 # Copyright (c) 2002,2003 IBM Corporation 
 # All rights reserved.   This program and the accompanying materials
@@ -77,6 +77,6 @@ for (0..2) {
 
 __END__
 
-$Log: WSDL_ns01.t,v $
+$Log$
 Revision 1.1  2005/11/10 15:30:48  evanchsa-oss
 Added test and data for namespaced WSDL

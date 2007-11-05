@@ -14,7 +14,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '1.1.6';
+our $VERSION = '1.1.7';
 
 =head1 NAME
 
@@ -26,7 +26,9 @@ metadata queries on LSIDs.
  use LS::ID;
  use LS::Locator;
 
- $lsid = LS::ID->new('URN:LSID:pdb.org:PDB:112L:');
+ $lsid = LS::ID->new(
+    'urn:lsid:biomoby.org:servicetype:Retrieval:2001-09-21T16-00-00Z'
+     );
 
  $locator = LS::Locator->new();
  $authority = $locator->resolveAuthority($lsid);
@@ -34,6 +36,12 @@ metadata queries on LSIDs.
  $resource = $authority->getResource($lsid);
 
  $data = $resource->getData();
+ 
+ $response = $data->response();
+
+ # $response is a filehandle, so you can use it as with any other
+
+ print <$response>;
 
 
 =head1 DESCRIPTION

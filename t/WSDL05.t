@@ -1,4 +1,4 @@
-# $Id: WSDL05.t,v 1.2 2005/11/10 15:01:20 evanchsa-oss Exp $
+# $Id: WSDL05.t 1504 2005-11-10 15:01:20Z evanchsa-oss $
 # =====================================================================
 # Copyright (c) 2002,2003 IBM Corporation 
 # All rights reserved.   This program and the accompanying materials
@@ -93,6 +93,6 @@ cmp_ok($location->protocol(), 'eq', ${LS::Authority::WSDL::Constants::Protocols:
 
 __END__
 
-$Log: WSDL05.t,v $
+$Log$
 Revision 1.2  2005/11/10 15:01:20  evanchsa-oss
 Removed dead code

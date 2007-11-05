@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $Id: wsdl_parser.pl,v 1.1 2005/11/11 21:37:26 evanchsa-oss Exp $
+# $Id: wsdl_parser.pl 1512 2005-11-11 21:37:26Z evanchsa-oss $
 # =====================================================================
 # Copyright (c) 2005 IBM Corporation 
 # All rights reserved.   This program and the accompanying materials

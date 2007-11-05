@@ -1,4 +1,4 @@
-# $Id: WSDL.pm,v 1.32 2005/11/14 14:33:19 evanchsa-oss Exp $
+# $Id: WSDL.pm 1814 2007-11-05 19:22:21Z edwardkawas $
 # ====================================================================
 # Copyright (c) 2002,2003 IBM Corporation 
 # All rights reserved.   This program and the accompanying materials

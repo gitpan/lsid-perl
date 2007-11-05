@@ -1,4 +1,4 @@
-# $Id: WSDL_ns02.t,v 1.1 2005/11/11 21:36:23 evanchsa-oss Exp $
+# $Id: WSDL_ns02.t 1509 2005-11-11 21:36:30Z evanchsa-oss $
 # =====================================================================
 # Copyright (c) 2002,2003 IBM Corporation 
 # All rights reserved.   This program and the accompanying materials
@@ -77,7 +77,7 @@ for (0..2) {
 
 __END__
 
-$Log: WSDL_ns02.t,v $
+$Log$
 Revision 1.1  2005/11/11 21:36:23  evanchsa-oss
 Adding new WSDL Test
 

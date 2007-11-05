@@ -242,7 +242,7 @@ sub handle_http {
 	# 	 Ideally, the LS::HTTP::Service would handle different
 	#	 SOAP backends accordingly (Apache, CGI, Daemon).
 
-	if($ENV{'REQUEST_URI'} =~ /^\/authority(?:\/){0,1}$/) {
+	if($ENV{'REQUEST_URI'} && $ENV{'REQUEST_URI'} =~ /^\/authority(?:\/){0,1}$/) {
 
 		#
 		# All services must accept a request for the service ports WSDL
@@ -267,17 +267,17 @@ sub handle_http {
 		# SOAP servers may optionally accept plain HTTP requests
 		#
 
-		if($ENV{'REQUEST_URI'} =~ /^\/authority\/\?lsid=(.*)/) {
+		if($ENV{'REQUEST_URI'} && ($ENV{'REQUEST_URI'} =~ /^\/authority\/\?lsid=(.*)/)) {
 
 			# Authority communication
 			$self->httpServer()->do_authority($1);
 		}
-		elsif($ENV{'REQUEST_URI'} =~ /^\/authority\/metadata\/?(.*)/) {
+		elsif($ENV{'REQUEST_URI'} && $ENV{'REQUEST_URI'} =~ /^\/authority\/metadata\/?(.*)/) {
 
 			# Metadata communication
 			$self->httpServer()->do_metadata($1);
 		}
-		elsif($ENV{'REQUEST_URI'} =~ /^\/authority\/data\/?(.*)/) {
+		elsif($ENV{'REQUEST_URI'} && $ENV{'REQUEST_URI'} =~ /^\/authority\/data\/?(.*)/) {
 
 			# Data communication
 			$self->httpServer()->do_data($1);
